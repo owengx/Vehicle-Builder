@@ -178,15 +178,15 @@ class Cli {
         // TODO: Use the answers object to pass the required properties to the Truck constructor
         const truck = new Truck(
           Cli.generateVin(),
-          answer.color,
+          answers.color,
           answers.make,
-          ansers.model,
+          answers.model,
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
+          [],
           //details that the car class does not have per acceptance criteria
           parseInt(answers.towingCapacity)
-          []
         );
         // TODO: push the truck to the vehicles array
         this.vehicles.push(truck);
@@ -256,9 +256,9 @@ class Cli {
         // TODO: Use the answers object to pass the required properties to the Motorbike constructor
         const motorbike = new Motorbike(
           Cli.generateVin(),
-          answer.color,
+          answers.color,
           answers.make,
-          ansers.model,
+          answers.model,
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
@@ -325,7 +325,7 @@ class Cli {
             'Turn left',
             'Reverse',
             'tow vehicle',
-            'do a wheelie';
+            'do a wheelie',
             'Select or create another vehicle',
             'Exit',
           ],

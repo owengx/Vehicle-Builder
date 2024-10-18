@@ -13,7 +13,7 @@ class Truck extends Vehicle implements AbleToTow {
   model: string;
   year: number;
   weight: number;
-  topspeed: number;
+  topSpeed: number;
   wheels: Wheel[];
   towingCapacity: number;
 
@@ -23,15 +23,15 @@ class Truck extends Vehicle implements AbleToTow {
 
   // TODO: Create a constructor that accepts the properties of the Truck class
   constructor(
-    vin: string;
-    color: string;
-    make: string;
-    model: string;
-    year: number;
-    weight: number;
-    topspeed: number;
-    wheels: Wheel[];
-    towingCapacity: number;
+    vin: string,
+    color: string,
+    make: string,
+    model: string,
+    year: number,
+    weight: number,
+    topspeed: number,
+    wheels: Wheel[],
+    towingCapacity: number,
   ){
     super();
     this.vin = vin;
@@ -40,8 +40,8 @@ class Truck extends Vehicle implements AbleToTow {
     this.model = model;
     this.year = year;
     this.weight = weight;
-    this.topspeed = topspeed;
-    towingCapacity = towingCapacity;
+    this.topSpeed =topspeed;
+    this.towingCapacity = towingCapacity;
     // TODO: The constructor should call the constructor of the parent class, Vehicle
     // TODO: The constructor should initialize the properties of the Truck class
     // TODO: The constructor should check if the wheels array has 4 elements and create 4 new default Wheel objects if it does not
@@ -58,7 +58,7 @@ class Truck extends Vehicle implements AbleToTow {
   }
   // TODO: Implement the tow method from the AbleToTow interface
   tow(vehicle: Truck | Motorbike | Car): void {
-    if(vehicle.weight => this.towingCapacity) {
+    if(vehicle.weight <= this.towingCapacity) {
       console.log(`Truck ${this.make} ${this.model} is towing a ${vehicle.make} ${vehicle.model}`);
     } else {
       console.log('The ${vehicle.make} ${vehicle.model} is too heavy to be towed by the Truck')
